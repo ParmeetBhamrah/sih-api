@@ -6,7 +6,7 @@ router = APIRouter()
 
 namaste_df = pd.read_csv("app/data/namaste_mock_data.csv")
 
-@router.get("namaste/search")
+@router.get("/namaste/search")
 def search_namaste(query: str = Query(..., min_length=1)):
     """Autocomplete search for NAMASTE terms by code or vice-versa"""
     query_lower = query.lower()

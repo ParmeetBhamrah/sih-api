@@ -6,7 +6,7 @@ router = APIRouter()
 
 icd_df = pd.read_csv("app/data/icd_mock_data.csv")
 
-@router.get("icd11/tm2/search")
+@router.get("/icd11/tm2/search")
 def search_namaste(query: str = Query(..., min_length=1)):
     """Autocomplete search for ICD-11 TM2 terms by code or vice-versa"""
     query_lower = query.lower()
